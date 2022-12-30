@@ -13,7 +13,8 @@ describe('Game2', function () {
     const { game } = await loadFixture(deployContractAndSetVariables);
 
     // press all the right switches to win this stage
-
+    [20, 47, 212].map(async key => await game.switchOn(key))
+    
     await game.win();
 
     // leave this assertion as-is
